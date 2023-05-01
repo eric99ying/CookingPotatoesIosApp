@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct CookingPotatoesApp: App {
+    @StateObject var data = Data()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().environmentObject(data)
         }
     }
 }
