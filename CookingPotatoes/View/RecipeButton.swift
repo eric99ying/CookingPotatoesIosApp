@@ -15,13 +15,13 @@ struct RecipeButton: View {
         Button(action: {
             isPresent = true
         }) {
-            let buttonText: String = ($isPresent.wrappedValue) ? "Collapse" : "Expand"
-            Text(buttonText)
-                .padding(4)
-                .background(.orange)
-                .buttonStyle(.borderedProminent)
+            let buttonImage: String = "plus"
+            Image(systemName: buttonImage)
+                .foregroundColor(Color.blue)
         }.popover(isPresented: $isPresent) {
             RecipeDetailView(recipe: recipe, isPresent: $isPresent)
+                .background(ExtraColors.light_gray)
+
         }
     }
 }

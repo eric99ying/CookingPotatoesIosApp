@@ -26,7 +26,6 @@ struct RecipeView: View {
         .padding()
         .foregroundColor(Color.black)
         .background(Color.yellow)
-        .border(ExtraColors.dark_green, width:1)
     }
     
 }

@@ -15,10 +15,13 @@ struct RecipeDetailView: View {
 
     var body: some View {
         ZStack {
-            Color.black.opacity(isPresent ? 0.3 : 0)
-                .edgesIgnoringSafeArea(.vertical)
-                .frame(width: .infinity, height: .infinity)
             VStack(alignment: .leading) {
+                HStack {
+                    Spacer()
+                    RecipeCloseButton(isPresent: $isPresent, recipe: recipe)
+                    Spacer()
+                }
+                .padding(.bottom, 10)
                 HStack {
                     Text(recipe.name)
                         .font(.headline)

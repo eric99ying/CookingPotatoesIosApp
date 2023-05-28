@@ -24,10 +24,12 @@ struct RecipesGridView: View {
             GridItem(.fixed(CGFloat(gridWidth))),
         ]
         ScrollView {
+            Text("Recipes").font(.title)
             LazyVGrid(columns: columns, spacing: 30) {
                 ForEach(0..<data.count) { index in
                     data[index]
                         .frame(height:100)
+                        .border(ExtraColors.dark_green, width:1)
                         .background(Color.yellow)
                 }
             }
